@@ -35,6 +35,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'foreman', '~> 0.87.2'
   gem 'devise', '~> 4.2'
+  gem 'pundit', '~> 2.1', '>= 2.1.1'
   
 end
 
