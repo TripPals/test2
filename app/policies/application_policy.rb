@@ -1,17 +1,13 @@
 # frozen_string_literal: true
 
-class PostPolicy < ApplicationPolicy
-  attr_reader  :post
+class ApplicationPolicy
+  attr_reader :user, :record
 
-  def initialize(user, post)
-    super(user, post)
-    @post = record
+  def initialize(user, record)
+    @user = user
+    @record = record
   end
 
-  def admin_list?
-    user.admin?
-  end
-  
   def index?
     false
   end
@@ -29,7 +25,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.moderator? || record.try(:user) == user
+    false
   end
 
   def edit?
@@ -40,11 +36,9 @@ class PostPolicy < ApplicationPolicy
     false
   end
 
-  unless PostPolicy.new(current_user, @post).update?
-    raise Pundit::NotAuthorizedError, "not allowed to update? this #{@post.inspect}"
-  end
-
   class Scope
+    attr_reader :user, :scope
+
     def initialize(user, scope)
       @user = user
       @scope = scope
@@ -53,9 +47,5 @@ class PostPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    private
-
-    attr_reader :user, :scope
   end
 end
