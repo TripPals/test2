@@ -1,22 +1,22 @@
 <%= form_with(model: course) do |form| %>
   <div class="fields">
-    <%= form.label :name, '名稱' %>
-    <%= form.text_field :name %>
+    <%= form.label :title, '標題' %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="fields">
-    <%= form.label :price, '價格' %>
-    <%= form.number_field :price %>
+    <%= form.label :content, '內容' %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="fields">
-    <%= form.label :intro, '介紹' %>
-    <%= form.text_area :intro %>
+    <%= form.label :start_at, '' %>
+    <%= form.text_area :start_at %>
   </div>
 
   <div class="fields">
-    <%= form.label :hour, '時數' %>
-    <%= form.number_field :hour %>
+    <%= form.label :end_at, '' %>
+    <%= form.number_field :end_at %>
   </div>
 
   <div class="actions">
