@@ -1,4 +1,4 @@
-<%= form_with(model: course) do |form| %>
+<%= form_with(model: post) do |form| %>
   <div class="fields">
     <%= form.label :title, '標題' %>
     <%= form.text_field :title %>
@@ -10,13 +10,13 @@
   </div>
 
   <div class="fields">
-    <%= form.label :start_at, '' %>
-    <%= form.text_area :start_at %>
+    <%= form.label :start_at, '開始日期' %>
+    <%= form.date_field :start_at %>
   </div>
 
   <div class="fields">
-    <%= form.label :end_at, '' %>
-    <%= form.number_field :end_at %>
+    <%= form.label :end_at, '結束日期' %>
+    <%= form.date_field :end_at %>
   </div>
 
   <div class="actions">

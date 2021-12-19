@@ -34,7 +34,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'foreman', '~> 0.87.2'
-  gem 'devise', '~> 4.2'
+  gem 'devise', '~> 4.8', '>= 4.8.1'
+  gem 'devise_invitable', '~> 2.0', '>= 2.0.6'
   gem 'pundit', '~> 2.1', '>= 2.1.1'
   
 end
