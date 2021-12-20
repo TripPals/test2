@@ -1,2 +1,5 @@
 <h1>修改文章</h1>
 <%=render "form" ,post: @post, btn_label: "修改文章"  %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>

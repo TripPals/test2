@@ -4,8 +4,12 @@
 <table>
   <thead>
     <tr>
+      <td>id</td>
       <td>名稱</td>
       <td>內容</td>
+      <td>Users</td>
+      <td>Creators</td>
+      <td>Editors</td>
       <td>開始</td>
       <td>結束</td>
     </tr>
@@ -13,8 +17,12 @@
   <tbody>
     <% @posts.each do|post| %>
     <tr>
+      <td><%= post.id %></td>
       <td><%= link_to post.title,post_path(post.id) %></td>
       <td><%= post.content %></td>
+      <td><%= post.users.distinct.pluck(:email)%><td>
+      <td><%#= post.creators.distinct.pluck(:email)%><td>
+      <td><%#= post.editors.distinct.pluck(:email)%><td>
       <td><%= post.start_at %></td>
       <td><%= post.end_at %></td>
       <td><%= link_to "編輯文章", edit_post_path(post.id) %></td>

@@ -1,4 +1,11 @@
+
 <% @users.each do |user| %>
+  <%# check which role%>
+  <%= user.roles.pluck(:name) %>
+  <%= link_to 'Edit roles', edit_user_path(user) %>
+  <%= user.posts.pluck(:id) %>
+  <%#= user.creator_posts.pluck(:id) %>
+  <%#= user.editor_posts.pluck(:id) %>
   <strong>email:</strong>
   <%= user.email %>
   <strong>created_by_invite?</strong>
@@ -7,9 +14,9 @@
   <%= user.invitation_accepted? %>
   <strong>invitees</strong>
   <%#= user.invitees.count %>
-  <% if user.created_by_invite? && user.invitation_accepted? == false %>
-    <%= link_to 'resend_invitation', resend_invitation_user_path(user), method: :patch %>
-  <% end %>
+  <%# if user.created_by_invite? && user.invitation_accepted? == false %>
+    <%#= link_to 'resend_invitation', resend_invitation_user_path(user), method: :patch %>
+  <%# end %>
   <%#= link_to ban_status(user), ban_user_path(user), method: :patch %>
   <br>
 <% end %>

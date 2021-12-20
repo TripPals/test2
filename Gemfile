@@ -36,6 +36,7 @@ group :development, :test do
   gem 'foreman', '~> 0.87.2'
   gem 'devise', '~> 4.8', '>= 4.8.1'
   gem 'devise_invitable', '~> 2.0', '>= 2.0.6'
+  gem "rolify"
   gem 'pundit', '~> 2.1', '>= 2.1.1'
   
 end

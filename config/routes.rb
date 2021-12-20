@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
     devise_for :users 
-
-    resources :users do
-      resources :posts, only: [:index, :new, :create]
-    end
-      resources :posts, only: [:show, :edit, :update, :destrop]
+    resources :posts
+    resources :users
+    # , only: [:index]
+        # do
+      # resources :posts, only: [:new, :create]
+        # end
+      # resources :posts, only: [:index, :show, :edit, :update, :destrop]
 
   root to: "pages#index"
   get "dashboard", to: "pages#dashboard"

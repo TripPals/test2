@@ -6,9 +6,9 @@ class PostPolicy < ApplicationPolicy
     @post = post
   end
 
-  def update?
-    user.admin? or not post.published?
-  end
+  # def update?
+  #   user.admin? or not post.published?
+  # end
   
   class Scope < Scope
     def resolve
